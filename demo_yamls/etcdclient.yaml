@@ -29,7 +29,7 @@ spec:
       name: etcd-certs
       readOnly: true
   hostNetwork: true
-  nodeName: kind-control-plane
+  nodeName: minikube
   volumes:
   - hostPath:
       path: /etc/kubernetes/pki/etcd
