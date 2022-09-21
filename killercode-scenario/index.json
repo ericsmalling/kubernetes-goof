@@ -1,15 +1,15 @@
 {
-  "title": "Kubernetes 2node multi-step verification",
-  "description": "Uses a two node Kubernetes cluster and performs user input verification in all steps",
+  "title": "Hands-on hacking containers and ways to prevent it  ",
+  "description": "A hands-on workshop where we break into a poorly configured cluster and then learn mitigation strategies against such threats.",
   "details": {
     "intro": {
       "text": "intro.md"
     },
     "steps": [
       {
-        "title": "Create a pod",
-        "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "title": "Cluster setup",
+        "text": "setup/text.md",
+        "foreground": "setup/setup-app.sh",
       },
       {
         "title": "Delete a pod",
