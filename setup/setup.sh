@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Create the cluster with PSP and Ingress support
-kind create cluster --config kind_psp_ingress.yaml
+#kind create cluster --config kind_psp_ingress.yaml
 
 # Install Calcio CNI
-kubectl apply -f calico.yaml
+#kubectl apply -f calico.yaml
 
 # Add the PSP's
 kubectl apply -f privileged_psp.yaml
@@ -20,17 +20,17 @@ kubectl apply -f role_bindings.yaml
 kubectl wait --for=condition=ready node --all
 
 # Apply the role for the Ingress controller
-kubectl apply -f ingress_ns_role.yaml
+#kubectl apply -f ingress_ns_role.yaml
 
 # Configure and install the Ingress controller
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+#kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 
 # Wait for the Ingress controller to become ready
-kubectl wait --namespace ingress-nginx \
-  --for=condition=ready pod \
-  --selector=app.kubernetes.io/component=controller \
-  --timeout=90s
-
+#kubectl wait --namespace ingress-nginx \
+#  --for=condition=ready pod \
+#  --selector=app.kubernetes.io/component=controller \
+#  --timeout=90s
+#
 # Create and configure the 'secure' namespace
 kubectl apply -f secure_ns_role.yaml
 
